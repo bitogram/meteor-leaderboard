@@ -50,5 +50,12 @@
 </template>
 
 <template name="home">
-This is the home template.
+<div class="container">
+	{{#unless currentUser}}
+		<br/>
+		This is the home template. You can click button to play.
+		{{> hello}}
+	{{/unless}}
+
+</div>
 </template>

@@ -1,3 +1,3 @@
 Router.map(function(){
-    this.route('hello');
+    this.route('home');
 });
