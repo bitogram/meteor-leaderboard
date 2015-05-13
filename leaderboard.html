@@ -1,0 +1,54 @@
+<head>
+  <title>leaderboard</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Leaderboard</h1>
+		{{> loginButtons}}
+		{{> leaderboard}}
+	</div>
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+
+<template name="leaderboard">
+	<div class="list-group">
+		<ul class="list-group">
+	{{#each player}}
+		<li class="list-group-item player {{selectedClass}}">score {{score}}: {{name}} - {{created}}</li>
+	{{/each}}
+		</ul>
+	</div>
+	<div class="btn-group">
+		<input type="button" class="btn btn-default increment" value="Give +5 Points">
+		<input type="button" class="btn btn-default decrement" value="Take -5 Points">
+	</div>
+	{{#if showSelectedPlayer}}
+	<li>Selected Player: {{showSelectedPlayer.name}}</li>
+		{{#if currentUser}}
+			<input type="button" class="remove" value="Remove Player">
+		{{/if}}
+	{{/if}}
+
+	{{> addPlayerForm }}
+
+</template>
+
+
+<template name="addPlayerForm">
+	{{#if currentUser}}
+	<form>
+		<input type="text" name="playerName">
+		<input type="submit" value="Add Player">
+	</form>
+	{{/if}}
+</template>
+
+<template name="home">
+This is the home template.
+</template>
