@@ -1,6 +1,7 @@
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    //PlayersList.update({created: null}, {$set: {created: moment().format() }}, {multi: true} );
   });
   Meteor.publish('thePlayers', function() {
     var currentUserId = this.userId;
